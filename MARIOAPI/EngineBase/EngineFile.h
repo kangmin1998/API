@@ -3,11 +3,13 @@
 #include <iostream>
 #include <io.h>
 
+     
+
 const int MAXPATH = 256;
 
 class UEngineFile
 {
-public:
+ public:
 	UEngineFile();
 	~UEngineFile();
 
@@ -15,7 +17,7 @@ public:
 	{
 		strcpy_s(Path, _Path);
 	}
-
+	
 	void Write(const void* _Ptr, size_t _Size);
 	void Read(void* _Ptr, size_t _Size);
 
@@ -23,7 +25,7 @@ public:
 	bool IsExits();
 	void Close();
 
-private:
+ private:
 	char Path[MAXPATH] = "";
 	FILE* File = nullptr;
 };
