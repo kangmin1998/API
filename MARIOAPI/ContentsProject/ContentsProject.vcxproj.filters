@@ -7,6 +7,12 @@
     <ClInclude Include="Player.h">
       <Filter>ContentsObject</Filter>
     </ClInclude>
+    <ClInclude Include="PlayGameMode.h">
+      <Filter>ContentsObject\GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="marioContentsCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -15,6 +21,12 @@
     <ClCompile Include="Player.cpp">
       <Filter>ContentsObject</Filter>
     </ClCompile>
+    <ClCompile Include="PlayGameMode.cpp">
+      <Filter>ContentsObject\GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="marioContentsCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -22,6 +34,12 @@
     </Filter>
     <Filter Include="ContentsObject">
       <UniqueIdentifier>{26872fba-4e70-4b03-abcf-75a854643a48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{4058e7d5-87bd-4323-ae7c-acab55e898e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ContentsObject\GameMode">
+      <UniqueIdentifier>{03d19eee-df52-4337-9849-dba3dc3b436f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
