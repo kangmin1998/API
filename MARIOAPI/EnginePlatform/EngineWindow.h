@@ -28,12 +28,14 @@ public:
 		return BackBuffer;
 	}
 
+
+
 protected:
 
 private:
 	static HINSTANCE hInstance;
 	static std::map<std::string, WNDCLASSEXA> WindowClasss;
-					
+
 	HDC BackBuffer = nullptr;
 	HWND WindowHandle = nullptr;
 };

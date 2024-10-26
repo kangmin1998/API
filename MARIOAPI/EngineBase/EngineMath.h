@@ -1,10 +1,8 @@
 #pragma once
 
-
 class FVector2D
 {
 public:
-
 	float X = 0.0f;
 	float Y = 0;
 
@@ -16,17 +14,14 @@ public:
 
 	FVector2D()
 	{
-
 	}
 
 	FVector2D(float _X, float _Y) : X(_X), Y(_Y)
 	{
-
 	}
 
 	FVector2D(int _X, int _Y) : X(static_cast<float>(_X)), Y(static_cast<float>(_Y))
 	{
-
 	}
 
 	int iX()
@@ -41,7 +36,6 @@ public:
 
 	FVector2D Half()
 	{
-
 		return { X * 0.5f, Y * 0.5f };
 	}
 
@@ -52,6 +46,8 @@ public:
 		Result.Y = Y * _Value;
 		return Result;
 	}
+
+
 
 	FVector2D operator+(FVector2D _Other) const
 	{
@@ -69,6 +65,7 @@ public:
 		return Result;
 	}
 
+
 	FVector2D operator/(int _Value) const
 	{
 		FVector2D Result;
@@ -77,18 +74,18 @@ public:
 		return Result;
 	}
 
+
+	bool operator==(FVector2D _Other) const
+	{
+		return X == _Other.X && Y == _Other.Y;
+	}
+
 	FVector2D& operator+=(FVector2D _Other)
 	{
 		X += _Other.X;
 		Y += _Other.Y;
 		return *this;
 	}
-
-	bool operator ==(FVector2D _Other) const
-	{
-		return X == _Other.X && Y == _Other.Y;
-	}
-
 };
 
 class FIntPoint
@@ -104,12 +101,10 @@ public:
 
 	FIntPoint()
 	{
-
 	}
 
 	FIntPoint(int _X, int _Y) : X(_X), Y(_Y)
 	{
-
 	}
 
 	FIntPoint operator+(FIntPoint _Other) const
@@ -127,6 +122,7 @@ public:
 		Result.Y = Y / _Value;
 		return Result;
 	}
+
 
 	bool operator==(FIntPoint _Other) const
 	{

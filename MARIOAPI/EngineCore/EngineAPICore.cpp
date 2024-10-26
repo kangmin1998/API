@@ -4,9 +4,11 @@
 #include <EngineBase/EngineDelegate.h>
 #include <EngineBase/EngineDebug.h>
 
+
 UEngineAPICore* UEngineAPICore::MainCore = nullptr;
 UContentsCore* UEngineAPICore::UserCore = nullptr;
 
+#include <Windows.h>
 
 UEngineAPICore::UEngineAPICore()
 {
@@ -55,21 +57,23 @@ void UEngineAPICore::EngineBeginPlay()
 
 void UEngineAPICore::EngineTick()
 {
-		
 	UserCore->Tick();
-
 	MainCore->Tick();
 }
 
 void UEngineAPICore::Tick()
 {
+	DeltaTimer.TimeCheck();
+	float DeltaTime = DeltaTimer.GetDeltaTime();
+
 	if (nullptr == CurLevel)
 	{
 		MSGASSERT("엔진 코어에 현재 레벨이 지정되지 않았습니다");
 		return;
 	}
 
-	CurLevel->Tick();
+
+	CurLevel->Tick(DeltaTime);
 	CurLevel->Render();
 }
 
@@ -77,7 +81,6 @@ void UEngineAPICore::Tick()
 void UEngineAPICore::OpenLevel(std::string_view _LevelName)
 {
 	std::string ChangeName = _LevelName.data();
-
 	std::map<std::string, class ULevel*>::iterator FindIter = Levels.find(ChangeName);
 	std::map<std::string, class ULevel*>::iterator EndIter = Levels.end();
 
@@ -86,6 +89,5 @@ void UEngineAPICore::OpenLevel(std::string_view _LevelName)
 		MSGASSERT(ChangeName + "라는 이름의 레벨은 존재하지 않습니다.");
 		return;
 	}
-
 	CurLevel = FindIter->second;
 }

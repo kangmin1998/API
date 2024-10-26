@@ -151,11 +151,14 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="marioContentsCore.h">
+    <ClInclude Include="MarioContentsCore.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Player.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="PlayGameMode.h">
       <SubType>
       </SubType>
@@ -163,11 +166,14 @@
     <ClInclude Include="PreCompile.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="marioContentsCore.cpp">
+    <ClCompile Include="MarioContentsCore.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Player.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="PlayGameMode.cpp">
       <SubType>
       </SubType>

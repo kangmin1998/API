@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-#include "marioContentsCore.h"
+#include "MarioContentsCore.h"
 #include <EngineCore/EngineAPICore.h>
 
 #include "PlayGameMode.h"
@@ -17,7 +17,6 @@ void EduContentsCore::BeginPlay()
 {
 	UEngineAPICore::GetCore()->CreateLevel<APlayGameMode, APlayer>("Play");
 	UEngineAPICore::GetCore()->OpenLevel("Play");
-
 }
 
 void EduContentsCore::Tick()

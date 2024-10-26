@@ -2,6 +2,7 @@
 #include <string>
 #include <Windows.h>
 #include <EnginePlatform/EngineWindow.h>
+#include <EngineBase/EngineTimer.h>
 #pragma comment (lib, "EngineBase.lib")
 #pragma comment (lib, "EnginePlatform.lib")
 #include "Level.h"
@@ -12,7 +13,6 @@ public:
 	virtual void BeginPlay() = 0;
 	virtual void Tick() = 0;
 };
-
 
 class UEngineAPICore
 {
@@ -43,8 +43,7 @@ public:
 		ULevel* NewLevel = new ULevel();
 
 		NewLevel->CreateGameMode<GameModeType, MainPawnType>();
-
-		Levels.insert({ _LevelName.data() , NewLevel });
+		Levels.insert({ _LevelName.data() , NewLevel});
 
 		return NewLevel;
 	}
@@ -61,10 +60,10 @@ private:
 	static UEngineAPICore* MainCore;
 	static UContentsCore* UserCore;
 
-	UEngineWindow EngineMainWindow; 
-	
-	std::map<std::string, class ULevel*> Levels;
+	UEngineTimer DeltaTimer = UEngineTimer();
+	UEngineWindow EngineMainWindow = UEngineWindow();
 
+	std::map<std::string, class ULevel*> Levels;
 	class ULevel* CurLevel = nullptr;
 
 	void Tick();

@@ -1,11 +1,14 @@
 #include "PreCompile.h"
-#include <ContentsProject/marioContentsCore.h>
+#include <ContentsProject/MarioContentsCore.h>
 
 
 #include <EngineCore/EngineAPICore.h>
 
 #pragma comment (lib, "EngineCore.lib")
 #pragma comment (lib, "ContentsProject.lib")
+
+
+#include <EngineBase/EngineTimer.h>
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	_In_opt_ HINSTANCE hPrevInstance,

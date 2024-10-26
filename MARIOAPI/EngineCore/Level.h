@@ -7,13 +7,13 @@ public:
 	friend class UEngineAPICore;
 	ULevel();
 	~ULevel();
-
+	
 	ULevel(const ULevel& _Other) = delete;
 	ULevel(ULevel&& _Other) noexcept = delete;
 	ULevel& operator=(const ULevel& _Other) = delete;
 	ULevel& operator=(ULevel&& _Other) noexcept = delete;
 
-	void Tick();
+	void Tick(float _DeltaTime);
 	void Render();
 
 	template<typename ActorType>
@@ -33,10 +33,11 @@ protected:
 
 private:
 
-		template<typename GameModeType, typename MainPawnType>
+	template<typename GameModeType, typename MainPawnType>
 	void CreateGameMode()
 	{
 		GameMode = new GameModeType();
+
 		MainPawn = new MainPawnType();
 
 		MainPawn->World = this;
@@ -49,9 +50,8 @@ private:
 		AllActors.push_back(MainPawn);
 	}
 
+
 	AGameMode* GameMode = nullptr;
-
 	AActor* MainPawn = nullptr;
-
 	std::list<AActor*> AllActors;
 };

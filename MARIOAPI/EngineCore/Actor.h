@@ -13,9 +13,9 @@ public:
 	AActor(AActor&& _Other) noexcept = delete;
 	AActor& operator=(const AActor& _Other) = delete;
 	AActor& operator=(AActor&& _Other) noexcept = delete;
-
+	
 	virtual void BeginPlay() {}
-	virtual void Tick() {}
+	virtual void Tick(float _DeltaTime) {}
 	virtual void Render();
 
 	class ULevel* GetWorld()
